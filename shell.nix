@@ -1,11 +1,11 @@
 { pkgs ? import <nixpkgs> {} }:
 pkgs.mkShell {
-  buildInputs = [
-    (pkgs.python311.withPackages (ps: with ps; [
-	sqlite3
+  packages = [
+    (pkgs.python3.withPackages (python-pkgs: with python-pkgs; [
+      # select Python packages here
+      spacy
     ]))
   ];
-  
   shellHook = ''
   '';
 }
