@@ -7,4 +7,4 @@ Ankify uses 3 scripts in order to :
 ## 1. DeckParser.py
 This script supports preprocessing in order to remove superfluous material in the cards such as grammar indications.
 Preprocessing is done using regex expressions.
-This script outputs a list of lemmas as a 
+This script outputs a list of lemmas as a .txt file with one lemma per line, which is very easy to handle for further manipulation.
