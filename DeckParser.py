@@ -12,4 +12,6 @@ try:
 except FileNotFoundError:
     print("The file you're trying to access doesn't exist.")
 
+os.remove("collection.anki2") # remove the sqlite database that is not needed anymore.
+
 
