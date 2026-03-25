@@ -1,5 +1,6 @@
 # Ankify
-Ankify is composed of several scripts, whose roles are explained in this document. The first script's role is to preprocess the notes to improve the precision of the tokenization and lemmatization steps.
+Ankify is composed of several scripts, whose roles are explained in this document. 
+The first script's role is to preprocess the notes to improve the precision of the tokenization and lemmatization steps.
 The second script's role is to tokenize and lemmatize the list of notes that was created using the first script, and the text of the book (using spacy), and create a csv with all the lemmas that haven't been learned yet, and the number of times they appear in the text.
 The third scripts role is to take the lemmas that are outputted by the second script and turn them into anki cards in an anki deck.
 
