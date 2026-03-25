@@ -26,10 +26,13 @@ Book = "Schachnovelle.txt"
 with open(Book, "r") as BookFile:
     BookContents = nlp(BookFile.read())
 
-for token in RawNote:
+for token in BookContents:
     if token.text is not token.is_stop:
-        BookLemmas[token.lemma_] += 1
+        if token.lemma_ in BookLemmas:
+            BookLemmas[token.lemma_] += 1
+        else:
+            BookLemmas[token.lemma_] = 1
 
-Print(BookLemmas)
+print(len(BookLemmas))
 
 
