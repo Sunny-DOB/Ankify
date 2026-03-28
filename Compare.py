@@ -1,12 +1,10 @@
 import spacy
-import nltk
-from nltk.corpus import stopwords
-
-nltk.download("stopwords")
 
 KnownLemmas = set()
 KnownNotes = set()
 BookLemmas = {}
+UnknownLemmas = set()
+OccurencesThreshold = 2 # minimum number of times
 
 with open("ProcessedNotes.txt", "r") as ProcessedNotes:
     for Note in ProcessedNotes:
@@ -31,8 +29,10 @@ for token in BookContents:
             BookLemmas[token.lemma_] += 1
         else:
             BookLemmas[token.lemma_] = 1
-for KnownLemma in KnownLemmas:
-    if KnownLemma in BookLemmas:
-        print(KnownLemma)
+for BookLemma in BookLemmas:
+    if BookLemma not in KnownLemmas:
+        if BookLemmas[BookLemma] >= OccurencesThreshold:
+            UnknownLemmas.add(BookLemma)
+        
 
-
+print(len(UnknownLemmas))
