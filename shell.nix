@@ -4,6 +4,9 @@ pkgs.mkShell {
     (pkgs.python3.withPackages (python-pkgs: with python-pkgs; [
       # select Python packages here
       spacy
+      #spacy-transformers
+      spacy-models.de_core_news_lg
+      nltk
     ]))
   ];
   shellHook = ''
