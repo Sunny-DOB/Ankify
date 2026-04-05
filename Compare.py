@@ -5,6 +5,7 @@ from nltk.corpus import stopwords
 nltk.download("stopwords")
 
 KnownLemmas = set()
+UnknownLemmas = set()
 KnownNotes = set()
 BookLemmas = {}
 
@@ -31,8 +32,10 @@ for token in BookContents:
             BookLemmas[token.lemma_] += 1
         else:
             BookLemmas[token.lemma_] = 1
-for KnownLemma in KnownLemmas:
-    if KnownLemma in BookLemmas:
-        print(KnownLemma)
+
+for lemma in BookLemmas:
+    if lemma is not in KnownLemmas:
+        UnkownLemmas.add(lemma)
+        print(lemma)
 
 
