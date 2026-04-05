@@ -30,15 +30,11 @@ for token in BookContents:
             BookLemmas[token.lemma_] += 1
         else:
             BookLemmas[token.lemma_] = 1
-<<<<<<< HEAD
 
-
-=======
 for BookLemma in BookLemmas:
     if BookLemma not in KnownLemmas:
         if BookLemmas[BookLemma] >= OccurencesThreshold:
             UnknownLemmas.add(BookLemma)
         
->>>>>>> 8a6419b50cd816a21310031401acf68347af2041
 
 print(len(UnknownLemmas))
