@@ -36,5 +36,9 @@ for BookLemma in BookLemmas:
         if BookLemmas[BookLemma] >= OccurencesThreshold:
             UnknownLemmas.add(BookLemma)
         
+with open("UnknownLemmas.txt", "w+") as UnknownLemmasFile:
+    for lemma in UnknownLemmas:
+        UnknownLemmasFile.write(lemma + "\n")
+
 
 print(len(UnknownLemmas))
